@@ -7,7 +7,19 @@
 - NAWL words with at least one NGSL same-family candidate: 184
 - NAWL words remaining after excluding those family-linked words: 773
 
-## Difficulty classification of the 773 remaining words
+## Difficulty classification of all 2809 NGSL words
+
+- Easy: 2563 (91.2%)
+- Medium: 233 (8.3%)
+- Hard: 13 (0.5%)
+- Total classified: 2809
+
+Files:
+- `NGSL_easy.txt`
+- `NGSL_medium.txt`
+- `NGSL_hard.txt`
+
+## Difficulty classification of the 773 remaining NAWL words
 
 - Easy: 297 (38.4%)
 - Medium: 385 (49.8%)
@@ -21,7 +33,7 @@ Files:
 
 Words inside each difficulty file are ordered from easier/higher-frequency to harder/lower-frequency according to the same score.
 
-Difficulty is a study estimate, not an official CEFR level. It combines English word frequency (wordfreq Zipf frequency), word length, approximate syllable/form complexity, common academic affixes, and a small curated override for obviously concrete/everyday words.
+Difficulty is a study estimate, not an official CEFR level. It combines English word frequency (wordfreq Zipf frequency), word length, approximate syllable/form complexity, common academic affixes, and a small curated override for obviously concrete/everyday NAWL words.
 
 ## Study file
 
