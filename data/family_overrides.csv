@@ -1,2 +1,114 @@
 family_key,NGSL_words,NAWL_words,reason
-develop,develop; development,developmental,Verified derivational family missed by Snowball stemmer
+accurate,accurate,accuracy,Verified derivational family missed by automatic stemming
+after,after,afterward,Verified derivational family missed by automatic stemming
+ally,ally,alliance,Verified derivational family missed by automatic stemming
+architect,architecture,architect,Verified lexical family missed by automatic stemming
+back,back,backward,Verified derivational family missed by automatic stemming
+biolog,biological,biologist,Verified lexical family missed by automatic stemming
+body,body,bodily,Verified derivational family missed by automatic stemming
+capital,capital,capitalist,Verified derivational family missed by automatic stemming
+carry,carry,carrier,Verified derivational family missed by automatic stemming
+chemical,chemical,chemistry,Verified lexical family missed by automatic stemming
+circle,circle,circulate; circulation,Verified derivational family missed by automatic stemming
+class,class,classification; classify,Verified derivational family missed by automatic stemming
+close,close,closure,Verified derivational family missed by automatic stemming
+code,code,encode,Verified derivational family missed by automatic stemming
+comment,comment,commentary,Verified derivational family missed by automatic stemming
+concept,concept,conceptual,Verified derivational family missed by automatic stemming
+connect,connect; connection,connector,Verified derivational family missed by automatic stemming
+constraint,constraint,constrain,Verified derivational family missed by automatic stemming
+consume,consume; consumer,consumption,Verified derivational family missed by automatic stemming
+critic,critic; critical; criticism; criticize,critique,Verified lexical family missed by automatic stemming
+cycle,cycle,cyclic,Verified derivational family missed by automatic stemming
+describe,describe; description,descriptor,Verified derivational family missed by automatic stemming
+develop,develop; development,developmental,Verified derivational family missed by automatic stemming
+differ,differ; difference; different; differently,differential; differentiate; differentiation,Verified derivational family missed by automatic stemming
+dimension,dimension,dimensional,Verified derivational family missed by automatic stemming
+ability,ability; able,disability,Verified prefixed derivational family missed by automatic stemming
+advantage,advantage,disadvantage,Verified prefixed derivational family missed by automatic stemming
+charge,charge,discharge,Verified prefixed derivational family missed by automatic stemming
+econom,economic; economy,economist,Verified derivational family missed by automatic stemming
+element,element,elementary,Verified derivational family missed by automatic stemming
+evolve,evolution; evolve,evolutionary,Verified derivational family missed by automatic stemming
+expert,expert,expertise,Verified derivational family missed by automatic stemming
+facility,facility,facilitate,Verified lexical family missed by automatic stemming
+formula,formula,formulation,Verified derivational family missed by automatic stemming
+force,force,enforcement; reinforce,Verified prefixed derivational family missed by automatic stemming
+free,free,freely,Verified derivational family missed by automatic stemming
+grade,grade,degrade,Verified prefixed derivational family missed by automatic stemming
+grammar,grammar,grammatical,Verified derivational family missed by automatic stemming
+graduate,graduate,postgraduate; undergraduate,Verified prefixed derivational family missed by automatic stemming
+identify,identify; identity,identification,Verified derivational family missed by automatic stemming
+include,include,inclusion,Verified derivational family missed by automatic stemming
+direct,direct; direction; directly,indirect,Verified prefixed derivational family missed by automatic stemming
+equal,equal; equally,inequality,Verified prefixed derivational family missed by automatic stemming
+infect,infection,infectious,Verified derivational family missed by automatic stemming
+influence,influence,influential,Verified derivational family missed by automatic stemming
+stabil,stability,instability,Verified prefixed derivational family missed by automatic stemming
+intervene,intervention,intervene,Verified lexical family missed by automatic stemming
+relevant,relevant,irrelevant,Verified prefixed derivational family missed by automatic stemming
+justify,justify,justification,Verified derivational family missed by automatic stemming
+liable,liability,liable,Verified derivational family missed by automatic stemming
+likely,likely,likelihood,Verified derivational family missed by automatic stemming
+line,line,linear; nonlinear,Verified derivational family missed by automatic stemming
+machine,machine,machinery,Verified derivational family missed by automatic stemming
+mark,mark,marker,Verified derivational family missed by automatic stemming
+maximum,maximum,maximize,Verified derivational family missed by automatic stemming
+mean,mean,meaningful,Verified derivational family missed by automatic stemming
+medium,medium,media,Verified inflectional lexical family missed by automatic stemming
+memory,memory,memorize,Verified derivational family missed by automatic stemming
+message,message,messenger,Verified derivational family missed by automatic stemming
+method,method,methodology,Verified derivational family missed by automatic stemming
+migrate,immigrant; immigration,migrate; migration,Verified prefixed lexical family missed by automatic stemming
+minimum,minimum,minimal; minimize,Verified derivational family missed by automatic stemming
+modify,modify,modification,Verified derivational family missed by automatic stemming
+money,money,monetary,Verified lexical family missed by automatic stemming
+nation,nation; national,multinational,Verified prefixed derivational family missed by automatic stemming
+multiple,multiple,multiply,Verified derivational family missed by automatic stemming
+necessary,necessary,necessity,Verified derivational family missed by automatic stemming
+normal,normal,norm,Verified lexical family missed by automatic stemming
+note,note,notation,Verified derivational family missed by automatic stemming
+occupy,occupy,occupation,Verified derivational family missed by automatic stemming
+occur,occur,occurrence,Verified derivational family missed by automatic stemming
+part,part,partial; partially; partition,Verified derivational family missed by automatic stemming
+phenomenon,phenomenon,phenomenal,Verified derivational family missed by automatic stemming
+philosophy,philosophy,philosopher; philosophical,Verified derivational family missed by automatic stemming
+plan,plan,planner,Verified derivational family missed by automatic stemming
+plant,plant,plantation,Verified derivational family missed by automatic stemming
+practice,practice,practitioner,Verified lexical family missed by automatic stemming
+problem,problem,problematic,Verified derivational family missed by automatic stemming
+process,process,processor,Verified derivational family missed by automatic stemming
+propose,propose,proposition,Verified lexical family missed by automatic stemming
+psycholog,psychological,psychologist,Verified derivational family missed by automatic stemming
+quality,quality,qualitative,Verified derivational family missed by automatic stemming
+quantity,quantity,quantitative,Verified derivational family missed by automatic stemming
+quote,quote,quotation,Verified derivational family missed by automatic stemming
+react,react; reaction,reactive; reactor,Verified derivational family missed by automatic stemming
+ready,ready,readily,Verified derivational family missed by automatic stemming
+real,real; reality,realism; realistic,Verified derivational family missed by automatic stemming
+construct,construct; construction,reconstruct,Verified prefixed derivational family missed by automatic stemming
+produce,produce; production,reproduce; reproduction,Verified prefixed derivational family missed by automatic stemming
+revolution,revolution,revolutionary,Verified derivational family missed by automatic stemming
+write,write,rewrite,Verified prefixed derivational family missed by automatic stemming
+rule,rule,ruler,Verified derivational family missed by automatic stemming
+scholar,scholar,scholarship,Verified derivational family missed by automatic stemming
+sense,sense,sensation; sensible; sensory,Verified lexical family missed by automatic stemming
+simple,simple,simplify,Verified derivational family missed by automatic stemming
+single,single,singular,Verified lexical family missed by automatic stemming
+slave,slave,slavery,Verified derivational family missed by automatic stemming
+solut,solution,soluble; solvent,Verified lexical family missed by automatic stemming
+special,special; specialist; specialize,specialty,Verified derivational family missed by automatic stemming
+sponsor,sponsor,sponsorship,Verified derivational family missed by automatic stemming
+strategy,strategy,strategic,Verified derivational family missed by automatic stemming
+surgery,surgery,surgeon; surgical,Verified lexical family missed by automatic stemming
+system,system,systematic,Verified derivational family missed by automatic stemming
+tempor,temporary,temporal,Verified lexical family missed by automatic stemming
+term,term,terminal; terminology,Verified derivational family missed by automatic stemming
+theory,theory,theorist,Verified derivational family missed by automatic stemming
+trick,trick,tricky,Verified derivational family missed by automatic stemming
+unit,unit,unify; unity,Verified lexical family missed by automatic stemming
+stable,stable,unstable,Verified prefixed derivational family missed by automatic stemming
+use,use,usage,Verified derivational family missed by automatic stemming
+vary,vary; variable; variation; variety,variance; variant,Verified lexical family missed by automatic stemming
+verb,verb,verbal,Verified derivational family missed by automatic stemming
+wise,wise,wisdom,Verified lexical family missed by automatic stemming
