@@ -9,6 +9,7 @@ on:
       - 'data/NAWL_1.2.txt'
       - 'data/family_overrides.csv'
       - 'scripts/analyze_word_families.py'
+      - 'scripts/find_family_review_candidates.py'
       - '.github/workflows/analyze-word-families.yml'
 
 permissions:
@@ -32,6 +33,9 @@ jobs:
       - name: Analyze overlap, families, and study difficulty
         run: python scripts/analyze_word_families.py
 
+      - name: Generate lexical family review candidates
+        run: python scripts/find_family_review_candidates.py
+
       - name: Commit analysis files
         run: |
           set -euo pipefail
@@ -41,6 +45,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No analysis changes to commit.'
           else
-            git commit -m 'Update NGSL-NAWL analysis and difficulty groups'
+            git commit -m 'Update NGSL-NAWL analysis and family review candidates'
             git push
           fi
