@@ -25,10 +25,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install analyzer dependency
-        run: python -m pip install --disable-pip-version-check nltk
+      - name: Install analyzer dependencies
+        run: python -m pip install --disable-pip-version-check nltk wordfreq
 
-      - name: Analyze overlap and word families
+      - name: Analyze overlap, families, and study difficulty
         run: python scripts/analyze_word_families.py
 
       - name: Commit analysis files
@@ -40,6 +40,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No analysis changes to commit.'
           else
-            git commit -m 'Add NGSL-NAWL overlap and word-family analysis'
+            git commit -m 'Update NGSL-NAWL analysis and difficulty groups'
             git push
           fi
