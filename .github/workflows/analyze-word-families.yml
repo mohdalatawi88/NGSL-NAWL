@@ -7,6 +7,7 @@ on:
     paths:
       - 'data/NGSL_1.2.txt'
       - 'data/NAWL_1.2.txt'
+      - 'data/family_overrides.csv'
       - 'scripts/analyze_word_families.py'
       - '.github/workflows/analyze-word-families.yml'
 
