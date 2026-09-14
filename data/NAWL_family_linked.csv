@@ -1,0 +1,338 @@
+NAWL_word,NGSL_family_words,family_keys
+accuracy,accurate,accurate
+accurately,accurate,accur
+activate,active; activity,activ
+actively,active; activity,activ
+adaptation,adapt,adapt
+adaptive,adapt,adapt
+admission,admit,admit
+afterward,after,after
+agriculture,agricultural,agricultur
+alliance,ally,ally
+amongst,among,among
+approximate,approximately,approxim
+approximation,approximately,approxim
+architect,architecture,architect
+artistic,artist,artist
+assignment,assign,assign
+athletic,athlete,athlet
+authority,author,author
+availability,available,avail
+backward,back,back
+behavioral,behavior,behavior
+biologist,biological,biolog
+biology,biological,biolog
+bodily,body,body
+bound,boundary,bound
+broadly,broad,broad
+calculation,calculate,calcul
+calculator,calculate,calcul
+capitalism,capital,capit
+capitalist,capital,capital
+carrier,carry,carry
+characterization,characterize,character
+chemistry,chemical,chemical
+circulate,circle,circle
+circulation,circle,circle
+civilization,civil,civil
+clarify,clear; clearly,clear
+classification,class,class
+classify,class,class
+clinic,clinical,clinic
+closure,close,close
+collective,collect; collection,collect
+commentary,comment,comment
+commonly,common,common
+communicative,communicate; communication,communic
+comparable,compare,compar
+comparative,compare,compar
+compensate,compensation,compens
+competence,compete,compet
+competent,compete,compet
+complication,complicate,complic
+composer,compose,compos
+composite,composition,composit
+comprehension,comprehensive,comprehens
+computation,compute; computer,comput
+conceive,concept,conceive
+conception,concept,concept
+conceptual,concept,concept
+conditional,condition,condit
+conduction,conduct,conduct
+connector,connect; connection,connect
+conservation,conservative,conserv
+conserve,conservative,conserv
+constitution,constitute,constitut
+constrain,constraint,constraint
+consultation,consult; consultant,consult
+consumption,consume; consumer,consume
+container,contain,contain
+continuity,continue; continuous,continu
+controversy,controversial,controversi
+correction,correct,correct
+correctly,correct,correct
+correspondence,correspond,correspond
+critically,critic; critical; criticism; criticize,critic
+critique,critic; critical; criticism; criticize,critic
+cyclic,cycle,cycle
+deficiency,deficit,deficit
+definite,definitely; definition,definit
+degrade,grade,grade
+demonstrator,demonstrate; demonstration,demonstr
+dense,density,dense
+dependence,depend; dependent,depend
+derivative,derive,deriv
+descriptor,describe; description,describe
+detection,detect,detect
+developmental,develop; development,develop
+differential,differ; difference; different; differently,differ
+differentiate,differ; difference; different; differently,differ
+differentiation,differ; difference; different; differently,differ
+dimensional,dimension,dimension
+directive,direct; direction; directly,direct
+disability,ability; able,ability
+disadvantage,advantage,advantage
+discharge,charge,charge
+distribution,distribute,distribut
+disturbance,disturb,disturb
+diverse,diversity,divers
+dominance,dominate,domin
+dominant,dominate,domin
+domination,dominate,domin
+economically,economic; economy,econom
+economist,economic; economy,econom
+effectiveness,effect; effective; effectively,effect
+electron,electronic,electron
+elementary,element,element
+elimination,eliminate,elimin
+emergence,emerge; emergency,emerg
+empirical,empire,empir
+encode,code,code
+enforcement,force,force
+enormously,enormous,enorm
+entrant,enter,enter
+equality,equal; equally,equal
+equivalence,equivalent,equival
+essence,essential,essence
+essentially,essential,essenti
+estimation,estimate,estim
+evident,evidence,evid
+evolutionary,evolution; evolve,evolve
+execute,executive,execut
+execution,executive,execut
+expertise,expert,expert
+facilitate,facility,facility
+factorial,factory,factori
+flexibility,flexible,flexibl
+formally,formal,formal
+formulation,formula,formula
+freely,free,free
+fundamentally,fundamental,fundament
+generalization,general; generally,general
+generalize,general; generally,general
+genetically,genetic,genet
+genetics,genetic,genet
+globalization,global,global
+goodness,good,good
+goods,good,good
+grammatical,grammar,grammar
+historically,historic; historical,histor
+identical,identity,ident
+identification,identify; identity,identify
+implicit,imply,imply
+importantly,import; importance; important,import
+incidence,incident,incid
+inclusion,include,include
+independently,independence; independent,independ
+indicator,indicate; indication,indic
+indirect,direct; direction; directly,direct
+individually,individual,individu
+industrialization,industrial; industry,industri
+industrialize,industrial; industry,industri
+inequality,equal; equally,equal
+infect,infection,infect
+infectious,infection,infect
+influential,influence,influence
+informal,inform; information,inform
+initiate,initial; initially; initiative,initi
+initiation,initial; initially; initiative,initi
+instability,stability,stabil
+integral,integrate,integr
+integration,integrate,integr
+intensity,intense,intens
+intensive,intense,intens
+interact,interaction,interact
+interestingly,interest,interest
+intervene,intervention,intervene
+interviewer,interview,interview
+irrelevant,relevant,relevant
+justification,justify,justify
+lecturer,lecture,lectur
+liable,liability,liable
+likelihood,likely,likely
+linear,line,line
+liter,literally,liter
+locally,local,local
+logical,logic,logic
+machinery,machine,machine
+marginal,margin,margin
+marker,mark,mark
+mathematical,mathematics,mathemat
+maximize,maximum,maximum
+meaningful,mean,mean
+mechanic,mechanism,mechan
+mechanical,mechanism,mechan
+media,medium,medium
+memorize,memory,memory
+messenger,message,message
+methodology,method,method
+migrate,immigrant; immigration,migrate
+migration,immigrant; immigration,migrate
+minimal,minimum,minimum
+minimize,minimum,minimum
+mobility,mobile,mobil
+modification,modify,modify
+monetary,money,money
+morality,moral,moral
+motive,motivate; motivation,motiv
+multinational,nation; national,nation
+multiply,multiple,multiple
+namely,name,name
+nationalism,nation; national,nation
+necessity,necessary,necessary
+nicely,nice,nice
+nonlinear,line,line
+norm,normal,normal
+notation,note,note
+numerical,numerous,numer
+objection,object; objective,object
+observer,observation; observe,observ
+occupation,occupy,occupy
+occurrence,occur,occur
+organ,organic; organization; organize,organ
+organism,organic; organization; organize,organ
+painful,pain,pain
+parental,parent,parent
+partial,part,part
+partially,part,part
+partition,part,part
+periodic,period,period
+phenomenal,phenomenon,phenomenon
+philosopher,philosophy,philosophy
+philosophical,philosophy,philosophy
+photographic,photograph,photograph
+physically,physical,physic
+physics,physical,physic
+planner,plan,plan
+plantation,plant,plant
+politically,political; politics,polit
+positively,position; positive,posit
+poster,post,post
+postgraduate,graduate,graduate
+practitioner,practice,practice
+prediction,predict,predict
+predominantly,dominate,dominate
+presume,presumably,presum
+problematic,problem,problem
+processor,process,process
+productive,product; production,product
+productivity,product; production,product
+progression,progress,progress
+progressive,progress,progress
+projection,project,project
+proposition,propose,propose
+psychologist,psychological,psycholog
+psychology,psychological,psycholog
+publish,publisher,publish
+purely,pure,pure
+qualitative,quality,quality
+quantitative,quantity,quantity
+questionnaire,question,question
+quotation,quote,quote
+randomize,random,random
+randomly,random,random
+reactive,react; reaction,react
+reactor,react; reaction,react
+readily,ready,ready
+realism,real; reality,real
+realistic,real; reality,real
+reconstruct,construct; construction,construct
+reinforce,force,force
+rejection,reject,reject
+reliability,reliable,reliabl
+replacement,replace,replac
+reproduce,produce; production,produce
+reproduction,produce; production,produce
+resistant,resist; resistance,resist
+revolutionary,revolution,revolution
+rewrite,write,write
+ruler,rule,rule
+scholarship,scholar,scholar
+secrete,secret,secret
+selective,select; selection,select
+sensation,sense,sense
+sensible,sense,sense
+sensitivity,sensitive,sensit
+sensory,sense,sense
+separately,separate,separ
+separation,separate,separ
+sexuality,sexual,sexual
+shortly,short,short
+similarity,similar; similarly,similar
+simplify,simple,simple
+singular,single,single
+slavery,slave,slave
+socialize,social,social
+socially,social,social
+soluble,solution,solut
+solute,solution,solut
+solvent,solution,solut
+sometime,sometimes,sometim
+spatial,space,space
+specialty,special; specialist; specialize,special
+specification,specific; specifically,specif
+sponsorship,sponsor,sponsor
+stabilize,stability,stabil
+standardize,standard,standard
+statistical,statistic,statist
+statistically,statistic,statist
+statistics,statistic,statist
+stimulus,stimulate,stimulate
+strategic,strategy,strategy
+strictly,strict,strict
+subjective,subject,subject
+substitution,substitute,substitut
+sufficiently,sufficient,suffici
+supposedly,suppose,suppos
+surgeon,surgery,surgery
+surgical,surgery,surgery
+sustainable,sustain,sustain
+symbolic,symbol,symbol
+systematic,system,system
+technically,technical,technic
+temporal,temporary,tempor
+tense,tension,tense
+terminal,term,term
+terminology,term,term
+terribly,terrible,terribl
+theorist,theory,theory
+thickness,thick,thick
+traditionally,tradition; traditional,tradit
+transformation,transform,transform
+translation,translate,translat
+transplant,plant,plant_trans
+tricky,trick,trick
+ultimate,ultimately,ultim
+undergraduate,graduate,graduate
+unemployed,unemployment,unemploy
+unify,unit,unit
+unity,unit,unit
+unstable,stable,stable
+uplift,lift,lift
+usage,use,use
+variability,variable,variabl
+variance,variable; variation; variety; vary,vary
+variant,variable; variation; variety; vary,vary
+vegetation,vegetable,veget
+verbal,verb,verb
+wisdom,wise,wise
