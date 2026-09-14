@@ -1,0 +1,62 @@
+name: Sync NGSL and NAWL word lists
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-word-lists.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download official NGSL and NAWL lists
+        run: |
+          set -euo pipefail
+          mkdir -p data /tmp/ngsl-nawl
+
+          curl -fL --retry 3 \
+            'https://www.newgeneralservicelist.com/s/NGSL_12_alphabetized_description.txt' \
+            -o /tmp/ngsl-nawl/ngsl.txt
+
+          curl -fL --retry 3 \
+            'https://www.newgeneralservicelist.com/s/NAWL_12_alphabetized_description.txt' \
+            -o /tmp/ngsl-nawl/nawl.txt
+
+          # Official NGSL file: first 19 lines are description/change notes.
+          tail -n +20 /tmp/ngsl-nawl/ngsl.txt | sed 's/\r$//' > data/NGSL_1.2.txt
+
+          # Official NAWL file: first 5 lines are description/references.
+          tail -n +6 /tmp/ngsl-nawl/nawl.txt | sed 's/\r$//' > data/NAWL_1.2.txt
+
+      - name: Validate word counts
+        run: |
+          set -euo pipefail
+          ngsl_count=$(grep -cve '^$' data/NGSL_1.2.txt)
+          nawl_count=$(grep -cve '^$' data/NAWL_1.2.txt)
+
+          echo "NGSL words: $ngsl_count"
+          echo "NAWL words: $nawl_count"
+
+          test "$ngsl_count" -eq 2809
+          test "$nawl_count" -eq 957
+
+      - name: Commit word lists
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/NGSL_1.2.txt data/NAWL_1.2.txt
+          if git diff --cached --quiet; then
+            echo 'No word-list changes to commit.'
+          else
+            git commit -m 'Add official NGSL 1.2 and NAWL 1.2 word lists'
+            git push
+          fi
