@@ -3,9 +3,10 @@
 - NGSL words: 2809
 - NAWL words: 957
 - Exact overlaps: 0
-- Cross-list same-stem family groups: 156
-- NAWL words with at least one NGSL same-family candidate: 184
-- NAWL words remaining after excluding those family-linked words: 773
+- Cross-list lexical-family groups: 157
+- Verified manual family overrides applied: 1
+- NAWL words with at least one NGSL same-family candidate: 185
+- NAWL words remaining after excluding those family-linked words: 772
 
 ## Difficulty classification of all 2809 NGSL words
 
@@ -19,12 +20,12 @@ Files:
 - `NGSL_medium.txt`
 - `NGSL_hard.txt`
 
-## Difficulty classification of the 773 remaining NAWL words
+## Difficulty classification of the 772 remaining NAWL words
 
-- Easy: 297 (38.4%)
-- Medium: 385 (49.8%)
-- Hard: 91 (11.8%)
-- Total classified: 773
+- Easy: 297 (38.5%)
+- Medium: 385 (49.9%)
+- Hard: 90 (11.7%)
+- Total classified: 772
 
 Files:
 - `NAWL_remaining_easy.txt`
@@ -37,10 +38,14 @@ Difficulty is a study estimate, not an official CEFR level. It combines English 
 
 ## Study file
 
-`NAWL_remaining_773.txt` contains the 773 NAWL 1.2 words that do not currently have an NGSL same-family candidate under this project's analysis method. It is generated automatically from the source lists and the same family analysis used for `study_pairs.csv`.
+`NAWL_remaining.txt` contains the current 772 NAWL 1.2 words that do not have an NGSL same-family candidate under the project's current verified analysis. The filename deliberately does not encode a fixed count because the total can decrease as verified family links are added.
 
 ## Family-analysis method
 
 Exact overlap is a case-insensitive exact word match.
 
-Same-family candidates are generated with NLTK's English Snowball stemmer. They are useful study groupings, but stemming is heuristic and can occasionally group words that are not true lexical-family members. Very short stems (<4 characters) are excluded to reduce false positives.
+Cross-list family candidates use two layers:
+1. NLTK English Snowball stemming for broad candidate discovery.
+2. `data/family_overrides.csv` for manually verified lexical families that Snowball misses, such as `develop / development ↔ developmental`.
+
+The override layer is intentionally conservative and auditable. We do not automatically strip arbitrary prefixes/suffixes because that can create false family matches. The remaining count should therefore be treated as the current verified study remainder, not as a permanent linguistic truth.

@@ -190,7 +190,6 @@ depict
 descendent
 descriptor
 destination
-developmental
 deviation
 diagnose
 diagnosis
