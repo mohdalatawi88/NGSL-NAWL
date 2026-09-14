@@ -112,3 +112,21 @@ use,use,usage,Verified derivational family missed by automatic stemming
 vary,vary; variable; variation; variety,variance; variant,Verified lexical family missed by automatic stemming
 verb,verb,verbal,Verified derivational family missed by automatic stemming
 wise,wise,wisdom,Verified lexical family missed by automatic stemming
+among,among,amongst,Verified variant form missed by automatic stemming
+admit,admit,admission,Verified derivational family missed by automatic stemming
+clear,clear; clearly,clarify,Verified derivational family missed by automatic stemming
+conceive,concept,conceive,Verified lexical family relation missed by automatic stemming
+bound,boundary,bound,Verified lexical family relation missed by automatic stemming
+dense,density,dense,Verified derivational family missed by automatic stemming
+enter,enter,entrant,Verified derivational family missed by automatic stemming
+dominate,dominate,predominantly,Verified prefixed lexical family missed by automatic stemming
+space,space,spatial,Verified lexical family missed by automatic stemming
+tense,tension,tense,Verified lexical family missed by automatic stemming
+lift,lift,uplift,Verified prefixed derivational family missed by automatic stemming
+stimulate,stimulate,stimulus,Verified lexical family missed by automatic stemming
+question,question,questionnaire,Verified derivational family missed by automatic stemming
+post,post,poster,Verified derivational family missed by automatic stemming
+plant_trans,plant,transplant,Verified prefixed derivational family missed by automatic stemming
+essence,essential,essence,Verified lexical family missed by automatic stemming
+imply,imply,implicit,Verified lexical family missed by automatic stemming
+deficit,deficit,deficiency,Verified lexical family missed by automatic stemming
