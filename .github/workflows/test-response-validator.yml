@@ -1,0 +1,39 @@
+name: Test response validator
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/response_validator.py'
+      - 'tests/test_response_validator.py'
+      - 'data/**'
+      - 'analysis/**'
+      - 'AGENTS.md'
+      - '.github/workflows/test-response-validator.yml'
+  pull_request:
+    paths:
+      - 'tools/response_validator.py'
+      - 'tests/test_response_validator.py'
+      - 'data/**'
+      - 'analysis/**'
+      - 'AGENTS.md'
+      - '.github/workflows/test-response-validator.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run validator tests
+        run: python -m unittest -v tests/test_response_validator.py
