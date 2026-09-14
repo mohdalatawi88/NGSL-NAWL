@@ -10,7 +10,7 @@ When the user sends one English word only, start directly with the examples. Do 
 - Put all English sentences first.
 - Then put all Arabic translations in the same order.
 - Do not place each translation directly under its English sentence.
-- Do not use numbering.
+- Do not use numbering or bullets in the answer.
 - Keep explanations minimal.
 - Make examples easy, short, and clearly representative of the meaning.
 - If the word has more than one common grammatical use, such as noun, verb, or adjective, cover each common use.
@@ -36,19 +36,56 @@ At the end of the answer, after the common-meaning summary, add a very short stu
 - If the word has a same-family counterpart in the other list, explicitly say that they are from the same word family and list the useful counterpart(s).
 - Prefer the mappings already recorded in `analysis/same_family_candidates.csv` and `analysis/study_pairs.csv` rather than guessing from spelling alone.
 - Example format: `العائلة: active / activity (NGSL) ↔ activate / actively (NAWL)`.
-- If no cross-list family match is recorded, say briefly: `لا توجد كلمة مرتبطة من نفس العائلة في القائمة الأخرى حسب تحليل المشروع.`
+- If no cross-list family match is recorded, use: `العائلة: لا توجد كلمة مرتبطة من نفس العائلة في القائمة الأخرى حسب تحليل المشروع.`
 - Do not count a same-family word as an additional meaning unless it genuinely has an independent common meaning.
 - Keep this family note short so it does not interfere with the main study format.
 
-## Ending
+## Required ending format
 
-At the end, state the number of common meanings and list those meanings briefly.
+The final three nonblank lines MUST always be exactly in this order:
 
-Then add the NGSL/NAWL family note described above.
+`المعاني الشائعة: N — معنى مختصر؛ معنى مختصر`
 
-## Final self-check before sending
+`القائمة: NGSL`
 
-Before sending any answer, verify:
+`العائلة: ...`
+
+Replace `N`, the meanings, the list name, and the family content with the correct values. The list value must be one of `NGSL`, `NAWL`, `both`, or `neither`.
+
+## Mandatory Python validation gate
+
+`tools/response_validator.py` is the mandatory final gate for every one-word query.
+
+Before sending an answer:
+
+1. Draft the complete answer according to this file.
+2. Validate it with:
+
+```bash
+python tools/response_validator.py WORD draft.txt
+```
+
+Or pipe the draft through stdin:
+
+```bash
+cat draft.txt | python tools/response_validator.py WORD
+```
+
+3. If the validator returns exit code `1` or prints `FAIL`, fix every reported error and run it again.
+4. Do not send the answer until the validator returns exit code `0` and prints `PASS`.
+5. To obtain the project-verified list membership and cross-list family note before drafting, use:
+
+```bash
+python tools/response_validator.py WORD --print-study-note
+```
+
+The validator checks the deterministic rules, including query shape, ordering, example/translation counts, no numbering or bullets, final summary format, NGSL/NAWL membership, verified cross-list family mapping, selected bold expressions, and curated important derived forms.
+
+Semantic requirements such as whether every important common meaning has been covered cannot be proven by Python syntax checks alone. They remain a mandatory language-quality self-check and must be reviewed before the validator is run. Never treat `PASS` as permission to omit a known common meaning or grammatical use.
+
+## Final self-check before validation and sending
+
+Before running the validator, verify:
 
 - All important common meanings are included.
 - There are two short and clear sentences for each common meaning.
@@ -61,4 +98,6 @@ Before sending any answer, verify:
 - Rare meanings are excluded unless requested.
 - The number of common meanings and their brief labels are included at the end.
 - The NGSL/NAWL membership and same-family cross-list check has been completed using the project files.
+- The final three lines follow the required ending format.
+- `tools/response_validator.py` returns `PASS` for the final draft.
 - If any condition is violated, correct the answer before sending it.
