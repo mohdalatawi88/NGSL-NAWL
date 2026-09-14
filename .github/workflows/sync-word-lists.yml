@@ -29,16 +29,22 @@ jobs:
             -o /tmp/ngsl-nawl/nawl.txt
 
           # Official NGSL file: first 19 lines are description/change notes.
-          tail -n +20 /tmp/ngsl-nawl/ngsl.txt | sed 's/\r$//' > data/NGSL_1.2.txt
+          tail -n +20 /tmp/ngsl-nawl/ngsl.txt \
+            | sed 's/\r$//' \
+            | sed '/^[[:space:]]*$/d' \
+            > data/NGSL_1.2.txt
 
           # Official NAWL file: first 5 lines are description/references.
-          tail -n +6 /tmp/ngsl-nawl/nawl.txt | sed 's/\r$//' > data/NAWL_1.2.txt
+          tail -n +6 /tmp/ngsl-nawl/nawl.txt \
+            | sed 's/\r$//' \
+            | sed '/^[[:space:]]*$/d' \
+            > data/NAWL_1.2.txt
 
       - name: Validate word counts
         run: |
           set -euo pipefail
-          ngsl_count=$(grep -cve '^$' data/NGSL_1.2.txt)
-          nawl_count=$(grep -cve '^$' data/NAWL_1.2.txt)
+          ngsl_count=$(wc -l < data/NGSL_1.2.txt | tr -d ' ')
+          nawl_count=$(wc -l < data/NAWL_1.2.txt | tr -d ' ')
 
           echo "NGSL words: $ngsl_count"
           echo "NAWL words: $nawl_count"
@@ -55,6 +61,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No word-list changes to commit.'
           else
-            git commit -m 'Add official NGSL 1.2 and NAWL 1.2 word lists'
+            git commit -m 'Sync official NGSL 1.2 and NAWL 1.2 word lists'
             git push
           fi
