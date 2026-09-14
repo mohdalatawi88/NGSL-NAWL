@@ -3,10 +3,10 @@
 - NGSL words: 2809
 - NAWL words: 957
 - Exact overlaps: 0
-- Cross-list lexical-family groups: 157
-- Verified manual family overrides applied: 1
-- NAWL words with at least one NGSL same-family candidate: 185
-- NAWL words remaining after excluding those family-linked words: 772
+- Cross-list lexical-family groups: 258
+- Verified manual family overrides applied: 113
+- NAWL words with at least one NGSL same-family candidate: 319
+- NAWL words remaining after excluding those family-linked words: 638
 
 ## Difficulty classification of all 2809 NGSL words
 
@@ -20,12 +20,12 @@ Files:
 - `NGSL_medium.txt`
 - `NGSL_hard.txt`
 
-## Difficulty classification of the 772 remaining NAWL words
+## Difficulty classification of the 638 remaining NAWL words
 
-- Easy: 297 (38.5%)
-- Medium: 385 (49.9%)
-- Hard: 90 (11.7%)
-- Total classified: 772
+- Easy: 266 (41.7%)
+- Medium: 299 (46.9%)
+- Hard: 73 (11.4%)
+- Total classified: 638
 
 Files:
 - `NAWL_remaining_easy.txt`
@@ -38,7 +38,7 @@ Difficulty is a study estimate, not an official CEFR level. It combines English 
 
 ## Study file
 
-`NAWL_remaining.txt` contains the current 772 NAWL 1.2 words that do not have an NGSL same-family candidate under the project's current verified analysis. The filename deliberately does not encode a fixed count because the total can decrease as verified family links are added.
+`NAWL_remaining.txt` contains the current 638 NAWL 1.2 words that do not have an NGSL same-family candidate under the project's current verified analysis. The filename deliberately does not encode a fixed count because the total can decrease as verified family links are added.
 
 ## Family-analysis method
 

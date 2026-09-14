@@ -1,188 +1,77 @@
 NAWL_word,NGSL_candidate,score,signals
-afterward,after,10,ngsl-is-prefix; suffix:ward->∅
 amongst,among,6,ngsl-is-prefix; similarity:0.83
 antibody,body,6,strip-prefix:anti
-architect,architecture,5,lancaster:architect; similarity:0.86
 articulate,article,5,lancaster:artic; similarity:0.82
-backward,back,10,ngsl-is-prefix; suffix:ward->∅
 bound,boundary,5,lancaster:bound; similarity:0.77
 breakdown,break,4,ngsl-is-prefix
 campus,camp,9,lancaster:camp; ngsl-is-prefix; similarity:0.80
-capitalist,capital,15,lancaster:capit; ngsl-is-prefix; similarity:0.82; suffix:ist->∅
-circulate,circle,5,lancaster:circ; similarity:0.80
-classification,class,13,lancaster:class; ngsl-is-prefix; suffix:ification->∅
-classify,class,9,lancaster:class; ngsl-is-prefix; similarity:0.77
-classify,classic,5,lancaster:class; similarity:0.80
 classroom,class,4,ngsl-is-prefix
-closure,close,11,lancaster:clos; similarity:0.83; suffix:ure->e
-commentary,comment,12,ngsl-is-prefix; similarity:0.82; suffix:ary->∅
 communist,community,5,lancaster:commun; similarity:0.89
 communist,communicate,5,lancaster:commun; similarity:0.80
-conceptual,concept,9,lancaster:conceiv; ngsl-is-prefix; similarity:0.82
-connector,connect,15,lancaster:connect; ngsl-is-prefix; similarity:0.88; suffix:or->∅
-connector,connection,5,lancaster:connect; similarity:0.84
 deadline,dead,4,ngsl-is-prefix
-descriptor,description,5,lancaster:describ; similarity:0.86
-differential,different,9,lancaster:diff; ngsl-is-prefix; similarity:0.86
-differential,differ,7,lancaster:diff; ngsl-is-prefix
-differential,differently,5,lancaster:diff; similarity:0.87
-differentiate,different,6,ngsl-is-prefix; similarity:0.82
-differentiate,differ,4,ngsl-is-prefix
-differentiation,different,6,ngsl-is-prefix; similarity:0.75
-differentiation,differ,4,ngsl-is-prefix
-dimensional,dimension,15,lancaster:dimend; ngsl-is-prefix; similarity:0.90; suffix:al->∅
-disability,ability,6,strip-prefix:dis
-disadvantage,advantage,6,strip-prefix:dis
-discharge,charge,6,strip-prefix:dis
 discourse,course,6,strip-prefix:dis
 dissection,section,6,strip-prefix:dis
 dissolve,solve,6,strip-prefix:dis
-economist,economy,11,lancaster:econom; similarity:0.75; suffix:ist->y
-economist,economic,5,lancaster:econom; similarity:0.82
-elementary,element,12,ngsl-is-prefix; similarity:0.82; suffix:ary->∅
-evolutionary,evolution,15,lancaster:evolv; ngsl-is-prefix; similarity:0.86; suffix:ary->∅
-expertise,expert,9,lancaster:expert; ngsl-is-prefix; similarity:0.80
 facet,face,6,ngsl-is-prefix; similarity:0.89
 feedback,feed,4,ngsl-is-prefix
 footnote,foot,4,ngsl-is-prefix
-formulation,formula,12,ngsl-is-prefix; similarity:0.78; suffix:tion->∅
-formulation,form,7,lancaster:form; ngsl-is-prefix
-formulation,formation,5,lancaster:form; similarity:0.90
-freely,free,12,ngsl-is-prefix; similarity:0.80; suffix:ly->∅
 habitat,habit,9,lancaster:habit; ngsl-is-prefix; similarity:0.83
 halfway,half,4,ngsl-is-prefix
 handout,hand,4,ngsl-is-prefix
 headquarter,head,4,ngsl-is-prefix
 homework,home,4,ngsl-is-prefix
-identification,identify,6,suffix:ification->ify
 indifference,difference,6,strip-prefix:in
-indirect,direct,6,strip-prefix:in
-instability,stability,6,strip-prefix:in
 interface,face,6,strip-prefix:inter
-intervene,intervention,5,lancaster:interv; similarity:0.76
 inversion,version,6,strip-prefix:in
-irrelevant,relevant,6,strip-prefix:ir
-justification,just,13,lancaster:just; ngsl-is-prefix; suffix:ification->∅
-justification,justify,9,lancaster:just; suffix:ification->ify
 lateral,late,4,ngsl-is-prefix
 lifestyle,life,4,ngsl-is-prefix
 lifetime,life,4,ngsl-is-prefix
-likelihood,like,4,ngsl-is-prefix
 likewise,like,4,ngsl-is-prefix
-linear,line,6,ngsl-is-prefix; similarity:0.80
 liver,live,12,ngsl-is-prefix; similarity:0.89; suffix:er->e
 longitudinal,long,4,ngsl-is-prefix
-machinery,machine,6,ngsl-is-prefix; similarity:0.88
-marker,mark,15,lancaster:mark; ngsl-is-prefix; similarity:0.80; suffix:er->∅
 maternal,mate,4,ngsl-is-prefix
-meaningful,mean,7,lancaster:mean; ngsl-is-prefix
 mentor,mention,5,lancaster:ment; similarity:0.77
-messenger,mess,4,ngsl-is-prefix
-methodology,method,10,ngsl-is-prefix; suffix:ology->∅
 mineral,mine,4,ngsl-is-prefix
 missile,miss,4,ngsl-is-prefix
-modification,modify,6,suffix:ification->ify
 momentum,moment,6,ngsl-is-prefix; similarity:0.86
-multinational,national,6,strip-prefix:multi
-necessity,necessarily,5,lancaster:necess; similarity:0.80
-necessity,necessary,5,lancaster:necess; similarity:0.78
 nonetheless,none,4,ngsl-is-prefix
-norm,normal,5,lancaster:norm; similarity:0.80
-notation,note,6,suffix:ation->e
-occurrence,occur,4,ngsl-is-prefix
 overhead,head,6,strip-prefix:over
 overhead,over,4,ngsl-is-prefix
 overlap,over,4,ngsl-is-prefix
 overview,view,6,strip-prefix:over
 overview,over,4,ngsl-is-prefix
 parenthesis,parent,4,ngsl-is-prefix
-partial,part,7,lancaster:part; ngsl-is-prefix
-partial,partly,5,lancaster:part; similarity:0.77
-partially,part,7,lancaster:part; ngsl-is-prefix
-partially,partly,5,lancaster:part; similarity:0.80
 particle,part,4,ngsl-is-prefix
-partition,part,10,ngsl-is-prefix; suffix:ition->∅
 pathway,path,4,ngsl-is-prefix
-philosopher,philosophy,5,lancaster:philosoph; similarity:0.86
-philosophical,philosophy,5,lancaster:philosoph; similarity:0.78
 physician,physical,5,lancaster:phys; similarity:0.82
-planner,plan,7,lancaster:plan; ngsl-is-prefix
-planner,plane,5,lancaster:plan; similarity:0.83
-plantation,plant,13,lancaster:plant; ngsl-is-prefix; suffix:ation->∅
-plantation,plan,4,ngsl-is-prefix
 portfolio,port,4,ngsl-is-prefix
 portray,port,4,ngsl-is-prefix
 portrayal,port,4,ngsl-is-prefix
 poster,post,15,lancaster:post; ngsl-is-prefix; similarity:0.80; suffix:er->∅
-postgraduate,graduate,6,strip-prefix:post
-postgraduate,post,4,ngsl-is-prefix
 primer,prime,15,lancaster:prim; ngsl-is-prefix; similarity:0.91; suffix:er->e
 primer,primary,5,lancaster:prim; similarity:0.77
-problematic,problem,9,lancaster:problem; ngsl-is-prefix; similarity:0.78
-processor,process,15,lancaster:process; ngsl-is-prefix; similarity:0.88; suffix:or->∅
-proposition,propose,6,suffix:ition->e
-psychologist,psychological,5,lancaster:psycholog; similarity:0.80
 questionnaire,question,6,ngsl-is-prefix; similarity:0.76
-quotation,quote,9,lancaster:quot; suffix:ation->e
 rainfall,rain,4,ngsl-is-prefix
 rational,ratio,6,ngsl-is-prefix; similarity:0.77
 rationality,ratio,4,ngsl-is-prefix
-reactive,react,15,lancaster:react; ngsl-is-prefix; similarity:0.77; suffix:ive->∅
-reactive,active,6,strip-prefix:re
-reactive,reaction,5,lancaster:react; similarity:0.75
-reactor,react,15,lancaster:react; ngsl-is-prefix; similarity:0.83; suffix:or->∅
-reactor,actor,6,strip-prefix:re
-reactor,reaction,5,lancaster:react; similarity:0.80
-readily,ready,5,lancaster:ready; similarity:0.83
-readily,read,4,ngsl-is-prefix
-realism,real,13,lancaster:real; ngsl-is-prefix; suffix:ism->∅
-realistic,real,7,lancaster:real; ngsl-is-prefix
-realistic,reality,5,lancaster:real; similarity:0.75
 realm,real,6,ngsl-is-prefix; similarity:0.89
-reconstruct,construct,6,strip-prefix:re
-reproduce,produce,6,strip-prefix:re
-reproduction,production,6,strip-prefix:re
 republic,public,6,strip-prefix:re
-revolutionary,revolution,15,lancaster:revolv; ngsl-is-prefix; similarity:0.87; suffix:ary->∅
-rewrite,write,6,strip-prefix:re
-ruler,rule,12,ngsl-is-prefix; similarity:0.89; suffix:er->e
-scholarship,scholar,12,ngsl-is-prefix; similarity:0.78; suffix:ship->∅
-sensation,sense,9,lancaster:sens; suffix:ation->e
-sensible,sense,5,lancaster:sens; similarity:0.77
 shallow,shall,6,ngsl-is-prefix; similarity:0.83
 shuttle,shut,4,ngsl-is-prefix
-singular,sing,4,ngsl-is-prefix
-slavery,slave,6,ngsl-is-prefix; similarity:0.83
-solvent,solve,9,lancaster:solv; ngsl-is-prefix; similarity:0.83
-specialty,special,6,ngsl-is-prefix; similarity:0.88
-sponsorship,sponsor,15,lancaster:spons; ngsl-is-prefix; similarity:0.78; suffix:ship->∅
 static,statistic,5,lancaster:stat; similarity:0.80
 static,station,5,lancaster:stat; similarity:0.77
 straightforward,straight,4,ngsl-is-prefix
 stripe,strip,6,ngsl-is-prefix; similarity:0.91
 substrate,substance,5,lancaster:subst; similarity:0.78
-systematic,system,9,lancaster:system; ngsl-is-prefix; similarity:0.75
-temporal,temporary,5,lancaster:temp; similarity:0.82
-terminal,term,4,ngsl-is-prefix
-terminology,term,4,ngsl-is-prefix
 textbook,text,4,ngsl-is-prefix
-theorist,theory,6,suffix:ist->y
 thereby,there,6,ngsl-is-prefix; similarity:0.83
 transaction,action,6,strip-prefix:trans
 transmission,mission,6,strip-prefix:trans
 transplant,plant,6,strip-prefix:trans
 treaty,treat,6,ngsl-is-prefix; similarity:0.91
-tricky,trick,6,ngsl-is-prefix; similarity:0.91
-undergraduate,graduate,6,strip-prefix:under
-undergraduate,under,4,ngsl-is-prefix
 undermine,mine,6,strip-prefix:under
 undermine,under,4,ngsl-is-prefix
 underneath,under,4,ngsl-is-prefix
-unity,unit,6,ngsl-is-prefix; similarity:0.89
-unstable,stable,6,strip-prefix:un
-variance,variable,5,lancaster:vary; similarity:0.75
-variant,variation,5,lancaster:vary; similarity:0.75
-verbal,verb,15,lancaster:verb; ngsl-is-prefix; similarity:0.80; suffix:al->∅
 watershed,water,4,ngsl-is-prefix
 wavelength,wave,4,ngsl-is-prefix
 whereby,where,6,ngsl-is-prefix; similarity:0.83
