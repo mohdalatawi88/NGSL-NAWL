@@ -9,10 +9,12 @@ activ,activity,activate
 activ,activity,actively
 adapt,adapt,adaptation
 adapt,adapt,adaptive
+admit,admit,admission
 advantage,advantage,disadvantage
 after,after,afterward
 agricultur,agricultural,agriculture
 ally,ally,alliance
+among,among,amongst
 approxim,approximately,approximate
 approxim,approximately,approximation
 architect,architecture,architect
@@ -26,6 +28,7 @@ behavior,behavior,behavioral
 biolog,biological,biologist
 biolog,biological,biology
 body,body,bodily
+bound,boundary,bound
 broad,broad,broadly
 calcul,calculate,calculation
 calcul,calculate,calculator
@@ -40,6 +43,8 @@ circle,circle,circulation
 civil,civil,civilization
 class,class,classification
 class,class,classify
+clear,clear,clarify
+clear,clearly,clarify
 clinic,clinical,clinic
 close,close,closure
 code,code,encode
@@ -60,6 +65,7 @@ composit,composition,composite
 comprehens,comprehensive,comprehension
 comput,compute,computation
 comput,computer,computation
+conceive,concept,conceive
 concept,concept,conception
 concept,concept,conceptual
 condit,condition,conditional
@@ -92,10 +98,12 @@ critic,criticism,critique
 critic,criticize,critically
 critic,criticize,critique
 cycle,cycle,cyclic
+deficit,deficit,deficiency
 definit,definitely,definite
 definit,definition,definite
 demonstr,demonstrate,demonstrator
 demonstr,demonstration,demonstrator
+dense,density,dense
 depend,depend,dependence
 depend,dependent,dependence
 deriv,derive,derivative
@@ -129,6 +137,7 @@ divers,diversity,diverse
 domin,dominate,dominance
 domin,dominate,dominant
 domin,dominate,domination
+dominate,dominate,predominantly
 econom,economic,economically
 econom,economic,economist
 econom,economy,economically
@@ -143,11 +152,13 @@ emerg,emerge,emergence
 emerg,emergency,emergence
 empir,empire,empirical
 enorm,enormous,enormously
+enter,enter,entrant
 equal,equal,equality
 equal,equal,inequality
 equal,equally,equality
 equal,equally,inequality
 equival,equivalent,equivalence
+essence,essential,essence
 essenti,essential,essentially
 estim,estimate,estimation
 evid,evidence,evident
@@ -183,6 +194,7 @@ histor,historical,historically
 ident,identity,identical
 identify,identify,identification
 identify,identity,identification
+imply,imply,implicit
 import,import,importantly
 import,importance,importantly
 import,important,importantly
@@ -219,6 +231,7 @@ interview,interview,interviewer
 justify,justify,justification
 lectur,lecture,lecturer
 liable,liability,liable
+lift,lift,uplift
 likely,likely,likelihood
 line,line,linear
 line,line,nonlinear
@@ -286,10 +299,12 @@ physic,physical,physically
 physic,physical,physics
 plan,plan,planner
 plant,plant,plantation
+plant_trans,plant,transplant
 polit,political,politically
 polit,politics,politically
 posit,position,positively
 posit,positive,positively
+post,post,poster
 practice,practice,practitioner
 predict,predict,prediction
 presum,presumably,presume
@@ -313,6 +328,7 @@ publish,publisher,publish
 pure,pure,purely
 quality,quality,qualitative
 quantity,quantity,quantitative
+question,question,questionnaire
 quote,quote,quotation
 random,random,randomize
 random,random,randomly
@@ -356,6 +372,7 @@ solut,solution,soluble
 solut,solution,solute
 solut,solution,solvent
 sometim,sometimes,sometime
+space,space,spatial
 special,special,specialty
 special,specialist,specialty
 special,specialize,specialty
@@ -369,6 +386,7 @@ standard,standard,standardize
 statist,statistic,statistical
 statist,statistic,statistically
 statist,statistic,statistics
+stimulate,stimulate,stimulus
 strategy,strategy,strategic
 strict,strict,strictly
 subject,subject,subjective
@@ -382,6 +400,7 @@ symbol,symbol,symbolic
 system,system,systematic
 technic,technical,technically
 tempor,temporary,temporal
+tense,tension,tense
 term,term,terminal
 term,term,terminology
 terribl,terrible,terribly

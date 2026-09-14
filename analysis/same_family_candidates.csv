@@ -4,10 +4,12 @@ accur,accurate,accurately
 accurate,accurate,accuracy
 activ,active; activity,activate; actively
 adapt,adapt,adaptation; adaptive
+admit,admit,admission
 advantage,advantage,disadvantage
 after,after,afterward
 agricultur,agricultural,agriculture
 ally,ally,alliance
+among,among,amongst
 approxim,approximately,approximate; approximation
 architect,architecture,architect
 artist,artist,artistic
@@ -19,6 +21,7 @@ back,back,backward
 behavior,behavior,behavioral
 biolog,biological,biologist; biology
 body,body,bodily
+bound,boundary,bound
 broad,broad,broadly
 calcul,calculate,calculation; calculator
 capit,capital,capitalism
@@ -30,6 +33,7 @@ chemical,chemical,chemistry
 circle,circle,circulate; circulation
 civil,civil,civilization
 class,class,classification; classify
+clear,clear; clearly,clarify
 clinic,clinical,clinic
 close,close,closure
 code,code,encode
@@ -45,6 +49,7 @@ compos,compose,composer
 composit,composition,composite
 comprehens,comprehensive,comprehension
 comput,compute; computer,computation
+conceive,concept,conceive
 concept,concept,conception; conceptual
 condit,condition,conditional
 conduct,conduct,conduction
@@ -62,8 +67,10 @@ correct,correct,correction; correctly
 correspond,correspond,correspondence
 critic,critic; critical; criticism; criticize,critically; critique
 cycle,cycle,cyclic
+deficit,deficit,deficiency
 definit,definitely; definition,definite
 demonstr,demonstrate; demonstration,demonstrator
+dense,density,dense
 depend,depend; dependent,dependence
 deriv,derive,derivative
 describe,describe; description,descriptor
@@ -76,6 +83,7 @@ distribut,distribute,distribution
 disturb,disturb,disturbance
 divers,diversity,diverse
 domin,dominate,dominance; dominant; domination
+dominate,dominate,predominantly
 econom,economic; economy,economically; economist
 effect,effect; effective; effectively,effectiveness
 electron,electronic,electron
@@ -84,8 +92,10 @@ elimin,eliminate,elimination
 emerg,emerge; emergency,emergence
 empir,empire,empirical
 enorm,enormous,enormously
+enter,enter,entrant
 equal,equal; equally,equality; inequality
 equival,equivalent,equivalence
+essence,essential,essence
 essenti,essential,essentially
 estim,estimate,estimation
 evid,evidence,evident
@@ -110,6 +120,7 @@ grammar,grammar,grammatical
 histor,historic; historical,historically
 ident,identity,identical
 identify,identify; identity,identification
+imply,imply,implicit
 import,import; importance; important,importantly
 incid,incident,incidence
 include,include,inclusion
@@ -130,6 +141,7 @@ interview,interview,interviewer
 justify,justify,justification
 lectur,lecture,lecturer
 liable,liability,liable
+lift,lift,uplift
 likely,likely,likelihood
 line,line,linear; nonlinear
 liter,literally,liter
@@ -176,8 +188,10 @@ photograph,photograph,photographic
 physic,physical,physically; physics
 plan,plan,planner
 plant,plant,plantation
+plant_trans,plant,transplant
 polit,political; politics,politically
 posit,position; positive,positively
+post,post,poster
 practice,practice,practitioner
 predict,predict,prediction
 presum,presumably,presume
@@ -193,6 +207,7 @@ publish,publisher,publish
 pure,pure,purely
 quality,quality,qualitative
 quantity,quantity,quantitative
+question,question,questionnaire
 quote,quote,quotation
 random,random,randomize; randomly
 react,react; reaction,reactive; reactor
@@ -220,6 +235,7 @@ slave,slave,slavery
 social,social,socialize; socially
 solut,solution,soluble; solute; solvent
 sometim,sometimes,sometime
+space,space,spatial
 special,special; specialist; specialize,specialty
 specif,specific; specifically,specification
 sponsor,sponsor,sponsorship
@@ -227,6 +243,7 @@ stabil,stability,instability; stabilize
 stable,stable,unstable
 standard,standard,standardize
 statist,statistic,statistical; statistically; statistics
+stimulate,stimulate,stimulus
 strategy,strategy,strategic
 strict,strict,strictly
 subject,subject,subjective
@@ -239,6 +256,7 @@ symbol,symbol,symbolic
 system,system,systematic
 technic,technical,technically
 tempor,temporary,temporal
+tense,tension,tense
 term,term,terminal; terminology
 terribl,terrible,terribly
 theory,theory,theorist

@@ -1,8 +1,6 @@
 NAWL_word,NGSL_candidate,score,signals
-amongst,among,6,ngsl-is-prefix; similarity:0.83
 antibody,body,6,strip-prefix:anti
 articulate,article,5,lancaster:artic; similarity:0.82
-bound,boundary,5,lancaster:bound; similarity:0.77
 breakdown,break,4,ngsl-is-prefix
 campus,camp,9,lancaster:camp; ngsl-is-prefix; similarity:0.80
 classroom,class,4,ngsl-is-prefix
@@ -47,10 +45,8 @@ physician,physical,5,lancaster:phys; similarity:0.82
 portfolio,port,4,ngsl-is-prefix
 portray,port,4,ngsl-is-prefix
 portrayal,port,4,ngsl-is-prefix
-poster,post,15,lancaster:post; ngsl-is-prefix; similarity:0.80; suffix:er->∅
 primer,prime,15,lancaster:prim; ngsl-is-prefix; similarity:0.91; suffix:er->e
 primer,primary,5,lancaster:prim; similarity:0.77
-questionnaire,question,6,ngsl-is-prefix; similarity:0.76
 rainfall,rain,4,ngsl-is-prefix
 rational,ratio,6,ngsl-is-prefix; similarity:0.77
 rationality,ratio,4,ngsl-is-prefix
@@ -67,7 +63,6 @@ textbook,text,4,ngsl-is-prefix
 thereby,there,6,ngsl-is-prefix; similarity:0.83
 transaction,action,6,strip-prefix:trans
 transmission,mission,6,strip-prefix:trans
-transplant,plant,6,strip-prefix:trans
 treaty,treat,6,ngsl-is-prefix; similarity:0.91
 undermine,mine,6,strip-prefix:under
 undermine,under,4,ngsl-is-prefix

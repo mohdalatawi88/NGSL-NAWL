@@ -18,7 +18,6 @@ anthropology
 incline
 axiom
 correlate
-questionnaire
 replication
 kilometer
 mediate
@@ -40,7 +39,6 @@ physiological
 splice
 biodiversity
 lexical
-entrant
 contradictory
 confine
 longitudinal

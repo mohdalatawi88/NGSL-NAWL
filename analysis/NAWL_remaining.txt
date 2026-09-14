@@ -10,7 +10,6 @@ acid
 acidic
 acute
 adjacent
-admission
 adolescent
 adverse
 aerosol
@@ -26,7 +25,6 @@ allocation
 altitude
 aluminum
 amino
-amongst
 amplitude
 analogy
 ancestor
@@ -72,7 +70,6 @@ bizarre
 blank
 bleed
 bonus
-bound
 bracket
 breakdown
 bubble
@@ -96,7 +93,6 @@ chronic
 chunk
 cinema
 circa
-clarify
 classroom
 clay
 clever
@@ -115,7 +111,6 @@ communist
 compact
 complement
 comply
-conceive
 cone
 configuration
 confine
@@ -156,13 +151,11 @@ deadline
 decay
 deceive
 defect
-deficiency
 deflection
 deliberately
 delta
 denominator
 denote
-dense
 depict
 descendent
 destination
@@ -208,13 +201,11 @@ emission
 emit
 emperor
 entity
-entrant
 enzyme
 epidemic
 epidemiology
 equilibrium
 erase
-essence
 ethical
 ethics
 ex
@@ -279,7 +270,6 @@ ideology
 illusion
 immune
 impact
-implicit
 impulse
 incline
 incredible
@@ -440,7 +430,6 @@ pole
 portfolio
 portray
 portrayal
-poster
 potassium
 powder
 pragmatic
@@ -449,7 +438,6 @@ precede
 precipitate
 precipitation
 predator
-predominantly
 prejudice
 preliminary
 prevalence
@@ -469,7 +457,6 @@ punish
 punishment
 puzzle
 quantum
-questionnaire
 quiz
 rack
 radar
@@ -531,7 +518,6 @@ sniff
 sodium
 sophisticate
 span
-spatial
 specimen
 spectrum
 sperm
@@ -544,7 +530,6 @@ stadium
 stance
 static
 stereotype
-stimulus
 straightforward
 strand
 stripe
@@ -570,7 +555,6 @@ synthesis
 synthetic
 tech
 tempt
-tense
 textbook
 theorem
 thereby
@@ -592,7 +576,6 @@ transcription
 transmission
 transmit
 transparency
-transplant
 trauma
 treaty
 tremendous
@@ -606,7 +589,6 @@ tutor
 undermine
 underneath
 unintelligible
-uplift
 upward
 urine
 utility
