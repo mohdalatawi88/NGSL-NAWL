@@ -9,12 +9,11 @@ from wordfreq import zipf_frequency
 ROOT = Path(__file__).resolve().parents[1]
 NGSL_PATH = ROOT / "data" / "NGSL_1.2.txt"
 NAWL_PATH = ROOT / "data" / "NAWL_1.2.txt"
+FAMILY_OVERRIDES_PATH = ROOT / "data" / "family_overrides.csv"
 OUT_DIR = ROOT / "analysis"
 
 EXPECTED_NGSL_TOTAL = 2809
 EXPECTED_NAWL_TOTAL = 957
-EXPECTED_NAWL_WITH_NGSL_FAMILY = 184
-EXPECTED_NAWL_REMAINING = 773
 
 stemmer = SnowballStemmer("english")
 VOWEL_GROUP_RE = re.compile(r"[aeiouy]+")
@@ -44,6 +43,30 @@ EASY_OVERRIDES = {
 
 def load_words(path: Path):
     return sorted({line.strip().lower() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()})
+
+
+def split_words(cell: str):
+    return sorted({part.strip().lower() for part in cell.split(";") if part.strip()})
+
+
+def load_family_overrides(path: Path):
+    if not path.exists():
+        return []
+    rows = []
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        required = {"family_key", "NGSL_words", "NAWL_words", "reason"}
+        if not required.issubset(reader.fieldnames or []):
+            raise RuntimeError(f"Unexpected columns in {path}; expected {sorted(required)}")
+        for row in reader:
+            key = (row["family_key"] or "").strip().lower()
+            g_words = split_words(row["NGSL_words"] or "")
+            a_words = split_words(row["NAWL_words"] or "")
+            reason = (row["reason"] or "").strip()
+            if not key or not g_words or not a_words:
+                raise RuntimeError(f"Invalid family override row: {row}")
+            rows.append((key, g_words, a_words, reason))
+    return rows
 
 
 def stem(word: str) -> str:
@@ -125,41 +148,53 @@ for word in ngsl:
 for word in nawl:
     nawl_by_stem[stem(word)].append(word)
 
-families = []
+# First pass: Snowball stemming. This is fast and catches most obvious
+# derivational families, but it is not trusted as the only source of truth.
+family_map = {}
 for key in sorted(set(ngsl_by_stem) & set(nawl_by_stem)):
     if len(key) < 4:
         continue
-    g_words = sorted(set(ngsl_by_stem[key]))
-    a_words = sorted(set(nawl_by_stem[key]))
-    # Keep cross-list families where there is at least one non-identical pair.
+    g_words = set(ngsl_by_stem[key])
+    a_words = set(nawl_by_stem[key])
     if any(g != a for g in g_words for a in a_words):
-        families.append((key, g_words, a_words))
+        family_map[key] = [g_words, a_words]
+
+# Second pass: verified manual overrides for real lexical families that the
+# stemmer misses. This file is intentionally auditable instead of applying
+# aggressive suffix/prefix stripping that can create false positives.
+overrides = load_family_overrides(FAMILY_OVERRIDES_PATH)
+for key, g_words, a_words, _reason in overrides:
+    missing_ngsl = sorted(set(g_words) - ngsl_set)
+    missing_nawl = sorted(set(a_words) - nawl_set)
+    if missing_ngsl or missing_nawl:
+        raise RuntimeError(
+            f"Invalid family override {key!r}; missing NGSL={missing_ngsl}, NAWL={missing_nawl}"
+        )
+    bucket = family_map.setdefault(key, [set(), set()])
+    bucket[0].update(g_words)
+    bucket[1].update(a_words)
+
+families = [
+    (key, sorted(g_words), sorted(a_words))
+    for key, (g_words, a_words) in sorted(family_map.items())
+]
 
 nawl_with_ngsl_family = sorted({word for _, _, a_words in families for word in a_words})
 nawl_remaining = sorted(nawl_set - set(nawl_with_ngsl_family))
 
-# These checks make the current NGSL/NAWL 1.2 study split explicit and prevent
-# silently publishing a file with a misleading count if the source data or
-# family-analysis method changes later.
-if len(nawl_with_ngsl_family) != EXPECTED_NAWL_WITH_NGSL_FAMILY:
-    raise RuntimeError(
-        f"Expected {EXPECTED_NAWL_WITH_NGSL_FAMILY} NAWL words with an NGSL family match, "
-        f"found {len(nawl_with_ngsl_family)}"
-    )
-if len(nawl_remaining) != EXPECTED_NAWL_REMAINING:
-    raise RuntimeError(
-        f"Expected {EXPECTED_NAWL_REMAINING} remaining NAWL words, found {len(nawl_remaining)}"
-    )
-
-# Classify all NGSL words and the 773 remaining NAWL words using the same score.
-# Inside each group, put easier/higher-frequency words first so each file can be
-# used directly as a study queue.
+# Difficulty uses the same scoring model for all NGSL words and for the current
+# NAWL remainder after verified cross-list families have been removed.
 ngsl_scores, ngsl_difficulty = build_difficulty_groups(ngsl)
 nawl_scores, nawl_difficulty = build_difficulty_groups(nawl_remaining)
 validate_difficulty_groups(ngsl, ngsl_difficulty, "NGSL")
 validate_difficulty_groups(nawl_remaining, nawl_difficulty, "NAWL remainder")
 
 OUT_DIR.mkdir(exist_ok=True)
+
+# Remove old count-encoded remainder files so a historical count is never
+# mistaken for the current verified result.
+for stale_path in OUT_DIR.glob("NAWL_remaining_[0-9]*.txt"):
+    stale_path.unlink()
 
 with (OUT_DIR / "exact_overlap.txt").open("w", encoding="utf-8") as f:
     for word in exact:
@@ -180,7 +215,7 @@ with (OUT_DIR / "study_pairs.csv").open("w", encoding="utf-8", newline="") as f:
                 if g != a:
                     writer.writerow([key, g, a])
 
-with (OUT_DIR / "NAWL_remaining_773.txt").open("w", encoding="utf-8") as f:
+with (OUT_DIR / "NAWL_remaining.txt").open("w", encoding="utf-8") as f:
     for word in nawl_remaining:
         f.write(word + "\n")
 
@@ -195,7 +230,7 @@ for level in ("easy", "medium", "hard"):
 
 
 def pct(n, total):
-    return n / total * 100
+    return n / total * 100 if total else 0.0
 
 
 summary = f"""# NGSL–NAWL overlap analysis
@@ -203,7 +238,8 @@ summary = f"""# NGSL–NAWL overlap analysis
 - NGSL words: {len(ngsl)}
 - NAWL words: {len(nawl)}
 - Exact overlaps: {len(exact)}
-- Cross-list same-stem family groups: {len(families)}
+- Cross-list lexical-family groups: {len(families)}
+- Verified manual family overrides applied: {len(overrides)}
 - NAWL words with at least one NGSL same-family candidate: {len(nawl_with_ngsl_family)}
 - NAWL words remaining after excluding those family-linked words: {len(nawl_remaining)}
 
@@ -237,13 +273,17 @@ Difficulty is a study estimate, not an official CEFR level. It combines English 
 
 ## Study file
 
-`NAWL_remaining_773.txt` contains the {len(nawl_remaining)} NAWL 1.2 words that do not currently have an NGSL same-family candidate under this project's analysis method. It is generated automatically from the source lists and the same family analysis used for `study_pairs.csv`.
+`NAWL_remaining.txt` contains the current {len(nawl_remaining)} NAWL 1.2 words that do not have an NGSL same-family candidate under the project's current verified analysis. The filename deliberately does not encode a fixed count because the total can decrease as verified family links are added.
 
 ## Family-analysis method
 
 Exact overlap is a case-insensitive exact word match.
 
-Same-family candidates are generated with NLTK's English Snowball stemmer. They are useful study groupings, but stemming is heuristic and can occasionally group words that are not true lexical-family members. Very short stems (<4 characters) are excluded to reduce false positives.
+Cross-list family candidates use two layers:
+1. NLTK English Snowball stemming for broad candidate discovery.
+2. `data/family_overrides.csv` for manually verified lexical families that Snowball misses, such as `develop / development ↔ developmental`.
+
+The override layer is intentionally conservative and auditable. We do not automatically strip arbitrary prefixes/suffixes because that can create false family matches. The remaining count should therefore be treated as the current verified study remainder, not as a permanent linguistic truth.
 """
 (OUT_DIR / "SUMMARY.md").write_text(summary, encoding="utf-8")
 
