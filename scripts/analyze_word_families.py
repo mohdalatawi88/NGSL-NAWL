@@ -1,8 +1,10 @@
 from collections import defaultdict
 from pathlib import Path
 import csv
+import re
 
 from nltk.stem.snowball import SnowballStemmer
+from wordfreq import zipf_frequency
 
 ROOT = Path(__file__).resolve().parents[1]
 NGSL_PATH = ROOT / "data" / "NGSL_1.2.txt"
@@ -14,6 +16,29 @@ EXPECTED_NAWL_WITH_NGSL_FAMILY = 184
 EXPECTED_NAWL_REMAINING = 773
 
 stemmer = SnowballStemmer("english")
+VOWEL_GROUP_RE = re.compile(r"[aeiouy]+")
+
+ACADEMIC_SUFFIXES = (
+    "tion", "sion", "ation", "ition", "ment", "ness", "ence", "ance",
+    "ity", "ism", "ology", "graphy", "ical", "ative", "itive", "ous",
+    "ive", "ary", "ory", "al", "ic",
+)
+ACADEMIC_PREFIXES = ("anti", "multi", "neo", "non", "sub", "trans")
+
+# Obvious everyday/concrete words that are especially easy to understand even
+# when raw corpus frequency alone would place them slightly lower.
+EASY_OVERRIDES = {
+    "airplane", "apple", "bat", "blank", "bonus", "bucket", "bullet",
+    "cattle", "cheat", "cheer", "chess", "clay", "clever", "client",
+    "clip", "clue", "deadline", "diary", "dictionary", "dose", "drain",
+    "fever", "flip", "ghost", "goat", "graph", "grid", "homework",
+    "kidney", "lab", "leaf", "leisure", "liver", "loop", "mall",
+    "manual", "marble", "monkey", "nest", "noisy", "outlet", "parcel",
+    "pardon", "pest", "plug", "poster", "punch", "puzzle", "quiz",
+    "radar", "recipe", "robot", "rope", "ruler", "snake", "sneeze",
+    "sniff", "spray", "stadium", "stripe", "sword", "textbook", "thumb",
+    "triangle", "wheat", "wisdom", "workshop", "yeast",
+}
 
 
 def load_words(path: Path):
@@ -22,6 +47,41 @@ def load_words(path: Path):
 
 def stem(word: str) -> str:
     return stemmer.stem(word)
+
+
+def study_ease_score(word: str) -> float:
+    """Estimate study ease from English frequency and surface-form complexity.
+
+    Higher is easier. The score is deliberately simple and reproducible; it is
+    a study-priority aid, not an official CEFR classification.
+    """
+    score = zipf_frequency(word, "en")
+
+    if len(word) <= 6:
+        score += 0.12
+    if len(word) > 8:
+        score -= min((len(word) - 8) * 0.06, 0.42)
+
+    vowel_groups = len(VOWEL_GROUP_RE.findall(word))
+    if vowel_groups >= 5:
+        score -= 0.15
+
+    if word.endswith(ACADEMIC_SUFFIXES) and len(word) >= 8:
+        score -= 0.10
+    if word.startswith(ACADEMIC_PREFIXES) and len(word) >= 8:
+        score -= 0.05
+
+    return round(score, 3)
+
+
+def classify_difficulty(word: str, score: float) -> str:
+    if word in EASY_OVERRIDES:
+        return "easy"
+    if score >= 4.00:
+        return "easy"
+    if score >= 3.25:
+        return "medium"
+    return "hard"
 
 
 ngsl = load_words(NGSL_PATH)
@@ -66,6 +126,22 @@ if len(nawl_remaining) != EXPECTED_NAWL_REMAINING:
         f"Expected {EXPECTED_NAWL_REMAINING} remaining NAWL words, found {len(nawl_remaining)}"
     )
 
+# Classify the 773 remaining words. Inside each group, put easier/higher-
+# frequency words first so the files can also be used directly as study queues.
+scores = {word: study_ease_score(word) for word in nawl_remaining}
+difficulty = {"easy": [], "medium": [], "hard": []}
+for word in nawl_remaining:
+    difficulty[classify_difficulty(word, scores[word])].append(word)
+for group in difficulty.values():
+    group.sort(key=lambda w: (-scores[w], w))
+
+if sum(len(group) for group in difficulty.values()) != EXPECTED_NAWL_REMAINING:
+    raise RuntimeError("Difficulty groups do not add up to 773 words")
+if set().union(*(set(group) for group in difficulty.values())) != set(nawl_remaining):
+    raise RuntimeError("Difficulty groups do not exactly cover the 773-word remainder")
+if any(set(difficulty[a]) & set(difficulty[b]) for a, b in (("easy", "medium"), ("easy", "hard"), ("medium", "hard"))):
+    raise RuntimeError("A word appears in more than one difficulty group")
+
 OUT_DIR.mkdir(exist_ok=True)
 
 with (OUT_DIR / "exact_overlap.txt").open("w", encoding="utf-8") as f:
@@ -91,6 +167,12 @@ with (OUT_DIR / "NAWL_remaining_773.txt").open("w", encoding="utf-8") as f:
     for word in nawl_remaining:
         f.write(word + "\n")
 
+for level in ("easy", "medium", "hard"):
+    with (OUT_DIR / f"NAWL_remaining_{level}.txt").open("w", encoding="utf-8") as f:
+        for word in difficulty[level]:
+            f.write(word + "\n")
+
+pct = lambda n: n / EXPECTED_NAWL_REMAINING * 100
 summary = f"""# NGSL–NAWL overlap analysis
 
 - NGSL words: {len(ngsl)}
@@ -100,11 +182,27 @@ summary = f"""# NGSL–NAWL overlap analysis
 - NAWL words with at least one NGSL same-family candidate: {len(nawl_with_ngsl_family)}
 - NAWL words remaining after excluding those family-linked words: {len(nawl_remaining)}
 
+## Difficulty classification of the 773 remaining words
+
+- Easy: {len(difficulty['easy'])} ({pct(len(difficulty['easy'])):.1f}%)
+- Medium: {len(difficulty['medium'])} ({pct(len(difficulty['medium'])):.1f}%)
+- Hard: {len(difficulty['hard'])} ({pct(len(difficulty['hard'])):.1f}%)
+- Total classified: {sum(len(group) for group in difficulty.values())}
+
+Files:
+- `NAWL_remaining_easy.txt`
+- `NAWL_remaining_medium.txt`
+- `NAWL_remaining_hard.txt`
+
+Words inside each difficulty file are ordered from easier/higher-frequency to harder/lower-frequency according to the same score.
+
+Difficulty is a study estimate, not an official CEFR level. It combines English word frequency (wordfreq Zipf frequency), word length, approximate syllable/form complexity, common academic affixes, and a small curated override for obviously concrete/everyday words.
+
 ## Study file
 
 `NAWL_remaining_773.txt` contains the {len(nawl_remaining)} NAWL 1.2 words that do not currently have an NGSL same-family candidate under this project's analysis method. It is generated automatically from the source lists and the same family analysis used for `study_pairs.csv`.
 
-## Method
+## Family-analysis method
 
 Exact overlap is a case-insensitive exact word match.
 
