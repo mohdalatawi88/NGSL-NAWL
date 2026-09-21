@@ -1,4 +1,5 @@
 from collections import defaultdict
+from itertools import combinations
 from pathlib import Path
 import csv
 
@@ -7,6 +8,7 @@ from nltk.stem.snowball import SnowballStemmer
 ROOT = Path(__file__).resolve().parents[1]
 NGSL_PATH = ROOT / "data" / "NGSL_1.2.txt"
 OVERRIDES_PATH = ROOT / "data" / "family_overrides.csv"
+EXCLUSIONS_PATH = ROOT / "data" / "NGSL_family_exclusions.csv"
 DATA_DIR = ROOT / "data"
 ANALYSIS_DIR = ROOT / "analysis"
 EXPECTED_NGSL_TOTAL = 2809
@@ -22,12 +24,38 @@ def split_words(cell: str):
     return sorted({part.strip().lower() for part in cell.split(";") if part.strip()})
 
 
+def normalized_pair(a: str, b: str):
+    return tuple(sorted((a, b)))
+
+
+def load_exclusions(path: Path):
+    pairs = set()
+    if not path.exists():
+        return pairs
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        required = {"word_a", "word_b", "reason"}
+        if not required.issubset(reader.fieldnames or []):
+            raise RuntimeError(f"Unexpected columns in {path}; expected {sorted(required)}")
+        for row in reader:
+            a = (row["word_a"] or "").strip().lower()
+            b = (row["word_b"] or "").strip().lower()
+            if not a or not b or a == b:
+                raise RuntimeError(f"Invalid exclusion row: {row}")
+            pairs.add(normalized_pair(a, b))
+    return pairs
+
+
 words = load_words(NGSL_PATH)
 word_set = set(words)
 if len(words) != EXPECTED_NGSL_TOTAL:
     raise RuntimeError(f"Expected {EXPECTED_NGSL_TOTAL} NGSL words, found {len(words)}")
 
-# Union-find lets us merge evidence from multiple conservative sources.
+excluded_pairs = load_exclusions(EXCLUSIONS_PATH)
+for a, b in excluded_pairs:
+    if a not in word_set or b not in word_set:
+        raise RuntimeError(f"NGSL family exclusion references missing word(s): {a}, {b}")
+
 parent = {w: w for w in words}
 rank = {w: 0 for w in words}
 
@@ -40,6 +68,8 @@ def find(x):
 
 
 def union(a, b):
+    if normalized_pair(a, b) in excluded_pairs:
+        return
     ra, rb = find(a), find(b)
     if ra == rb:
         return
@@ -50,8 +80,8 @@ def union(a, b):
         rank[ra] += 1
 
 
-# Layer 1: conservative Snowball stemming. Ignore very short stems, which are
-# more likely to merge unrelated words accidentally.
+# Layer 1: Snowball candidate families. We ignore very short stems and then
+# apply curated exclusions for known false or misleading matches.
 by_stem = defaultdict(list)
 for word in words:
     key = stemmer.stem(word)
@@ -60,13 +90,11 @@ for word in words:
 
 for group in by_stem.values():
     if len(group) >= 2:
-        anchor = group[0]
-        for word in group[1:]:
-            union(anchor, word)
+        for a, b in combinations(sorted(group), 2):
+            union(a, b)
 
-# Layer 2: reuse already verified manual cross-list family overrides when the
-# NGSL side itself contains multiple NGSL words. This catches obvious families
-# that Snowball can miss, such as evolve/evolution.
+# Layer 2: reuse previously verified manual family overrides whenever their
+# NGSL side contains multiple NGSL words. Exclusions still take precedence.
 manual_links_used = 0
 if OVERRIDES_PATH.exists():
     with OVERRIDES_PATH.open("r", encoding="utf-8-sig", newline="") as f:
@@ -74,9 +102,8 @@ if OVERRIDES_PATH.exists():
         for row in reader:
             ngsl_words = [w for w in split_words(row.get("NGSL_words", "")) if w in word_set]
             if len(ngsl_words) >= 2:
-                anchor = ngsl_words[0]
-                for word in ngsl_words[1:]:
-                    union(anchor, word)
+                for a, b in combinations(ngsl_words, 2):
+                    union(a, b)
                 manual_links_used += 1
 
 components = defaultdict(list)
@@ -86,10 +113,10 @@ for word in words:
 multi_groups = [sorted(group) for group in components.values() if len(group) >= 2]
 singletons = sorted(group[0] for group in components.values() if len(group) == 1)
 
-# Stable ordering: largest families first, then alphabetically by representative.
+
 def representative(group):
-    # Shortest form is usually the most convenient study anchor; alphabetical tie-break.
     return sorted(group, key=lambda w: (len(w), w))[0]
+
 
 multi_groups.sort(key=lambda g: (-len(g), representative(g), g))
 
@@ -139,20 +166,23 @@ summary = f"""# NGSL internal lexical-family analysis
 - Effective study units (families + singletons): {effective_units}
 - Reduction versus memorizing every surface form separately: {reduction} words ({reduction / len(words) * 100:.1f}%)
 - Verified manual override rows contributing NGSL-to-NGSL links: {manual_links_used}
+- Curated false/misleading pair exclusions applied: {len(excluded_pairs)}
 
 ## Generated files
 
 - `data/NGSL_internal_families.csv` — one row per multi-word NGSL family.
 - `data/NGSL_singletons.csv` — NGSL words not currently linked to another NGSL word.
 - `data/NGSL_word_family_map.csv` — one row per NGSL word, including its family and related words when applicable.
+- `data/NGSL_family_exclusions.csv` — auditable exclusions for false or misleading automatic matches.
 
 ## Method
 
-The analysis merges words using two conservative layers:
+The analysis uses three conservative layers:
 1. NLTK English Snowball stemming, only when the stem has at least 4 characters.
 2. Previously verified manual family overrides when the NGSL side contains multiple NGSL words.
+3. Curated exclusions that override automatic matching for false or misleading learner-oriented families.
 
-This is a reproducible study-oriented lexical-family analysis, not a claim that every morphological or etymological relationship in English has been captured. Manual review can further refine missed or ambiguous families.
+This is a reproducible study-oriented lexical-family analysis. It is intentionally conservative and can be refined further as additional ambiguous families are manually reviewed.
 """
 (ANALYSIS_DIR / "NGSL_INTERNAL_SUMMARY.md").write_text(summary, encoding="utf-8")
 
