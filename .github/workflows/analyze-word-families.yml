@@ -11,6 +11,7 @@ on:
       - 'scripts/analyze_word_families.py'
       - 'scripts/find_family_review_candidates.py'
       - 'scripts/export_family_linked_csv.py'
+      - 'scripts/analyze_ngsl_internal_families.py'
       - '.github/workflows/analyze-word-families.yml'
 
 permissions:
@@ -40,15 +41,18 @@ jobs:
       - name: Export linked NAWL words to data CSV
         run: python scripts/export_family_linked_csv.py
 
+      - name: Analyze internal NGSL lexical families
+        run: python scripts/analyze_ngsl_internal_families.py
+
       - name: Commit generated analysis and data files
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add analysis/ data/NAWL_family_linked.csv
+          git add analysis/ data/NAWL_family_linked.csv data/NGSL_internal_families.csv data/NGSL_singletons.csv data/NGSL_word_family_map.csv
           if git diff --cached --quiet; then
             echo 'No generated changes to commit.'
           else
-            git commit -m 'Update NGSL-NAWL analysis and linked family CSV'
+            git commit -m 'Update NGSL-NAWL analysis and family CSV files'
             git push
           fi
