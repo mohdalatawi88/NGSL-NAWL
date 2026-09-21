@@ -1,0 +1,272 @@
+family_id,representative,word_count,NGSL_words
+NGSL-F0001,critic,4,critic; critical; criticism; criticize
+NGSL-F0002,differ,4,differ; difference; different; differently
+NGSL-F0003,person,4,person; personal; personality; personally
+NGSL-F0004,produce,4,produce; producer; product; production
+NGSL-F0005,relate,4,relate; relation; relative; relatively
+NGSL-F0006,vary,4,variable; variation; variety; vary
+NGSL-F0007,assist,3,assist; assistance; assistant
+NGSL-F0008,attract,3,attract; attraction; attractive
+NGSL-F0009,care,3,care; careful; carefully
+NGSL-F0010,direct,3,direct; direction; directly
+NGSL-F0011,educate,3,educate; education; educational
+NGSL-F0012,effect,3,effect; effective; effectively
+NGSL-F0013,employ,3,employ; employer; employment
+NGSL-F0014,import,3,import; importance; important
+NGSL-F0015,impress,3,impress; impression; impressive
+NGSL-F0016,initial,3,initial; initially; initiative
+NGSL-F0017,manage,3,manage; management; manager
+NGSL-F0018,nature,3,natural; naturally; nature
+NGSL-F0019,operate,3,operate; operation; operator
+NGSL-F0020,organic,3,organic; organization; organize
+NGSL-F0021,origin,3,origin; original; originally
+NGSL-F0022,participant,3,participant; participate; participation
+NGSL-F0023,possible,3,possibility; possible; possibly
+NGSL-F0024,reason,3,reason; reasonable; reasonably
+NGSL-F0025,response,3,response; responsibility; responsible
+NGSL-F0026,significant,3,significance; significant; significantly
+NGSL-F0027,special,3,special; specialist; specialize
+NGSL-F0028,success,3,success; successful; successfully
+NGSL-F0029,universe,3,universal; universe; university
+NGSL-F0030,able,2,ability; able
+NGSL-F0031,absolute,2,absolute; absolutely
+NGSL-F0032,accept,2,accept; acceptable
+NGSL-F0033,achieve,2,achieve; achievement
+NGSL-F0034,active,2,active; activity
+NGSL-F0035,actual,2,actual; actually
+NGSL-F0036,addition,2,addition; additional
+NGSL-F0037,adjust,2,adjust; adjustment
+NGSL-F0038,advertise,2,advertise; advertisement
+NGSL-F0039,advise,2,advise; adviser
+NGSL-F0040,announce,2,announce; announcement
+NGSL-F0041,apart,2,apart; apartment
+NGSL-F0042,apparent,2,apparent; apparently
+NGSL-F0043,appear,2,appear; appearance
+NGSL-F0044,appoint,2,appoint; appointment
+NGSL-F0045,approve,2,approval; approve
+NGSL-F0046,arrange,2,arrange; arrangement
+NGSL-F0047,arrive,2,arrival; arrive
+NGSL-F0048,assess,2,assess; assessment
+NGSL-F0049,associate,2,associate; association
+NGSL-F0050,attach,2,attach; attachment
+NGSL-F0051,attend,2,attend; attendance
+NGSL-F0052,aware,2,aware; awareness
+NGSL-F0053,basic,2,basic; basically
+NGSL-F0054,beauty,2,beautiful; beauty
+NGSL-F0055,beside,2,beside; besides
+NGSL-F0056,breath,2,breath; breathe
+NGSL-F0057,busy,2,business; busy
+NGSL-F0058,capable,2,capability; capable
+NGSL-F0059,celebrate,2,celebrate; celebration
+NGSL-F0060,certain,2,certain; certainly
+NGSL-F0061,classic,2,classic; classical
+NGSL-F0062,clear,2,clear; clearly
+NGSL-F0063,close,2,close; closely
+NGSL-F0064,clothes,2,clothes; clothing
+NGSL-F0065,collect,2,collect; collection
+NGSL-F0066,combine,2,combination; combine
+NGSL-F0067,comfort,2,comfort; comfortable
+NGSL-F0068,commit,2,commit; commitment
+NGSL-F0069,communicate,2,communicate; communication
+NGSL-F0070,competition,2,competition; competitive
+NGSL-F0071,complete,2,complete; completely
+NGSL-F0072,complex,2,complex; complexity
+NGSL-F0073,compute,2,compute; computer
+NGSL-F0074,concentrate,2,concentrate; concentration
+NGSL-F0075,confident,2,confidence; confident
+NGSL-F0076,confuse,2,confuse; confusion
+NGSL-F0077,connect,2,connect; connection
+NGSL-F0078,consequence,2,consequence; consequently
+NGSL-F0079,considerable,2,considerable; consideration
+NGSL-F0080,consist,2,consist; consistent
+NGSL-F0081,constant,2,constant; constantly
+NGSL-F0082,construct,2,construct; construction
+NGSL-F0083,consult,2,consult; consultant
+NGSL-F0084,consume,2,consume; consumer
+NGSL-F0085,continue,2,continue; continuous
+NGSL-F0086,contribute,2,contribute; contribution
+NGSL-F0087,convention,2,convention; conventional
+NGSL-F0088,corporate,2,corporate; corporation
+NGSL-F0089,culture,2,cultural; culture
+NGSL-F0090,current,2,current; currently
+NGSL-F0091,custom,2,custom; customer
+NGSL-F0092,danger,2,danger; dangerous
+NGSL-F0093,dark,2,dark; darkness
+NGSL-F0094,definitely,2,definitely; definition
+NGSL-F0095,demonstrate,2,demonstrate; demonstration
+NGSL-F0096,depend,2,depend; dependent
+NGSL-F0097,depress,2,depress; depression
+NGSL-F0098,describe,2,describe; description
+NGSL-F0099,design,2,design; designer
+NGSL-F0100,determine,2,determination; determine
+NGSL-F0101,develop,2,develop; development
+NGSL-F0102,discuss,2,discuss; discussion
+NGSL-F0103,distinct,2,distinct; distinction
+NGSL-F0104,dramatic,2,dramatic; dramatically
+NGSL-F0105,economy,2,economic; economy
+NGSL-F0106,edit,2,edit; edition
+NGSL-F0107,efficient,2,efficiency; efficient
+NGSL-F0108,elect,2,elect; election
+NGSL-F0109,electric,2,electric; electricity
+NGSL-F0110,emerge,2,emerge; emergency
+NGSL-F0111,emotion,2,emotion; emotional
+NGSL-F0112,engine,2,engine; engineer
+NGSL-F0113,entertain,2,entertain; entertainment
+NGSL-F0114,entire,2,entire; entirely
+NGSL-F0115,equal,2,equal; equally
+NGSL-F0116,establish,2,establish; establishment
+NGSL-F0117,evaluate,2,evaluate; evaluation
+NGSL-F0118,even,2,even; evening
+NGSL-F0119,evolve,2,evolution; evolve
+NGSL-F0120,exact,2,exact; exactly
+NGSL-F0121,examine,2,examination; examine
+NGSL-F0122,except,2,except; exception
+NGSL-F0123,excite,2,excite; excitement
+NGSL-F0124,exhibit,2,exhibit; exhibition
+NGSL-F0125,exist,2,exist; existence
+NGSL-F0126,expect,2,expect; expectation
+NGSL-F0127,expense,2,expense; expensive
+NGSL-F0128,experience,2,experience; experiment
+NGSL-F0129,express,2,express; expression
+NGSL-F0130,extension,2,extension; extensive
+NGSL-F0131,extreme,2,extreme; extremely
+NGSL-F0132,fair,2,fair; fairly
+NGSL-F0133,faith,2,faith; faithfully
+NGSL-F0134,final,2,final; finally
+NGSL-F0135,firm,2,firm; firmly
+NGSL-F0136,first,2,first; firstly
+NGSL-F0137,format,2,format; formation
+NGSL-F0138,fortune,2,fortunate; fortune
+NGSL-F0139,frequent,2,frequent; frequently
+NGSL-F0140,friend,2,friend; friendly
+NGSL-F0141,function,2,function; functional
+NGSL-F0142,general,2,general; generally
+NGSL-F0143,generate,2,generate; generation
+NGSL-F0144,gentle,2,gentle; gently
+NGSL-F0145,govern,2,govern; government
+NGSL-F0146,great,2,great; greatly
+NGSL-F0147,happy,2,happiness; happy
+NGSL-F0148,hard,2,hard; hardly
+NGSL-F0149,help,2,help; helpful
+NGSL-F0150,high,2,high; highly
+NGSL-F0151,historic,2,historic; historical
+NGSL-F0152,hope,2,hope; hopefully
+NGSL-F0153,identify,2,identify; identity
+NGSL-F0154,illustrate,2,illustrate; illustration
+NGSL-F0155,imagine,2,imagination; imagine
+NGSL-F0156,immediate,2,immediate; immediately
+NGSL-F0157,immigrant,2,immigrant; immigration
+NGSL-F0158,implement,2,implement; implementation
+NGSL-F0159,improve,2,improve; improvement
+NGSL-F0160,increase,2,increase; increasingly
+NGSL-F0161,independent,2,independence; independent
+NGSL-F0162,indicate,2,indicate; indication
+NGSL-F0163,industry,2,industrial; industry
+NGSL-F0164,inform,2,inform; information
+NGSL-F0165,institution,2,institution; institutional
+NGSL-F0166,insure,2,insurance; insure
+NGSL-F0167,internal,2,internal; international
+NGSL-F0168,interpret,2,interpret; interpretation
+NGSL-F0169,invest,2,invest; investment
+NGSL-F0170,investigate,2,investigate; investigation
+NGSL-F0171,invite,2,invitation; invite
+NGSL-F0172,involve,2,involve; involvement
+NGSL-F0173,large,2,large; largely
+NGSL-F0174,like,2,like; likely
+NGSL-F0175,limit,2,limit; limitation
+NGSL-F0176,listen,2,listen; listener
+NGSL-F0177,locate,2,locate; location
+NGSL-F0178,love,2,love; lovely
+NGSL-F0179,main,2,main; mainly
+NGSL-F0180,major,2,major; majority
+NGSL-F0181,manufacture,2,manufacture; manufacturer
+NGSL-F0182,measure,2,measure; measurement
+NGSL-F0183,mere,2,mere; merely
+NGSL-F0184,minor,2,minor; minority
+NGSL-F0185,month,2,month; monthly
+NGSL-F0186,most,2,most; mostly
+NGSL-F0187,motivate,2,motivate; motivation
+NGSL-F0188,music,2,music; musical
+NGSL-F0189,nation,2,nation; national
+NGSL-F0190,near,2,near; nearly
+NGSL-F0191,negotiate,2,negotiate; negotiation
+NGSL-F0192,normal,2,normal; normally
+NGSL-F0193,object,2,object; objective
+NGSL-F0194,observe,2,observation; observe
+NGSL-F0195,obvious,2,obvious; obviously
+NGSL-F0196,office,2,office; officer
+NGSL-F0197,opposite,2,opposite; opposition
+NGSL-F0198,part,2,part; partly
+NGSL-F0199,particular,2,particular; particularly
+NGSL-F0200,perfect,2,perfect; perfectly
+NGSL-F0201,perform,2,perform; performance
+NGSL-F0202,politics,2,political; politics
+NGSL-F0203,position,2,position; positive
+NGSL-F0204,possess,2,possess; possession
+NGSL-F0205,potential,2,potential; potentially
+NGSL-F0206,power,2,power; powerful
+NGSL-F0207,practice,2,practical; practice
+NGSL-F0208,precise,2,precise; precisely
+NGSL-F0209,prefer,2,prefer; preference
+NGSL-F0210,prepare,2,preparation; prepare
+NGSL-F0211,present,2,present; presentation
+NGSL-F0212,previous,2,previous; previously
+NGSL-F0213,prison,2,prison; prisoner
+NGSL-F0214,probably,2,probability; probably
+NGSL-F0215,promote,2,promote; promotion
+NGSL-F0216,proper,2,proper; properly
+NGSL-F0217,propose,2,proposal; propose
+NGSL-F0218,protect,2,protect; protection
+NGSL-F0219,public,2,public; publication
+NGSL-F0220,quick,2,quick; quickly
+NGSL-F0221,quiet,2,quiet; quietly
+NGSL-F0222,rapid,2,rapid; rapidly
+NGSL-F0223,rare,2,rare; rarely
+NGSL-F0224,react,2,react; reaction
+NGSL-F0225,real,2,real; reality
+NGSL-F0226,recent,2,recent; recently
+NGSL-F0227,recommend,2,recommend; recommendation
+NGSL-F0228,refer,2,refer; reference
+NGSL-F0229,reflect,2,reflect; reflection
+NGSL-F0230,region,2,region; regional
+NGSL-F0231,regular,2,regular; regularly
+NGSL-F0232,regulate,2,regulate; regulation
+NGSL-F0233,remark,2,remark; remarkable
+NGSL-F0234,report,2,report; reporter
+NGSL-F0235,represent,2,represent; representative
+NGSL-F0236,require,2,require; requirement
+NGSL-F0237,research,2,research; researcher
+NGSL-F0238,resist,2,resist; resistance
+NGSL-F0239,respect,2,respect; respectively
+NGSL-F0240,restrict,2,restrict; restriction
+NGSL-F0241,retire,2,retire; retirement
+NGSL-F0242,rough,2,rough; roughly
+NGSL-F0243,second,2,second; secondly
+NGSL-F0244,secure,2,secure; security
+NGSL-F0245,select,2,select; selection
+NGSL-F0246,serious,2,serious; seriously
+NGSL-F0247,severe,2,several; severe
+NGSL-F0248,similar,2,similar; similarly
+NGSL-F0249,situate,2,situate; situation
+NGSL-F0250,slight,2,slight; slightly
+NGSL-F0251,specific,2,specific; specifically
+NGSL-F0252,strong,2,strong; strongly
+NGSL-F0253,structure,2,structural; structure
+NGSL-F0254,subsequent,2,subsequent; subsequently
+NGSL-F0255,sudden,2,sudden; suddenly
+NGSL-F0256,suggest,2,suggest; suggestion
+NGSL-F0257,support,2,support; supporter
+NGSL-F0258,sure,2,sure; surely
+NGSL-F0259,surprise,2,surprise; surprisingly
+NGSL-F0260,survive,2,survival; survive
+NGSL-F0261,total,2,total; totally
+NGSL-F0262,tradition,2,tradition; traditional
+NGSL-F0263,transport,2,transport; transportation
+NGSL-F0264,typical,2,typical; typically
+NGSL-F0265,unit,2,unit; unite
+NGSL-F0266,unlike,2,unlike; unlikely
+NGSL-F0267,usual,2,usual; usually
+NGSL-F0268,weak,2,weak; weakness
+NGSL-F0269,week,2,week; weekly
+NGSL-F0270,wide,2,wide; widely
+NGSL-F0271,wonder,2,wonder; wonderful
