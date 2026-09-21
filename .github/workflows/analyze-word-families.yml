@@ -8,6 +8,7 @@ on:
       - 'data/NGSL_1.2.txt'
       - 'data/NAWL_1.2.txt'
       - 'data/family_overrides.csv'
+      - 'data/NGSL_family_exclusions.csv'
       - 'scripts/analyze_word_families.py'
       - 'scripts/find_family_review_candidates.py'
       - 'scripts/export_family_linked_csv.py'
